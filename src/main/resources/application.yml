@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fmanager?serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    show-sql: false
+  servlet:
+      multipart:
+        max-file-size: 5MB
+        max-request-size: 5MB
+
+maxima:
+  repository:
+    aws-s3:
+      enabled: true
+      credentials:
+        access-key: YCAJEyu5r8WLv9obkltYqcnhm
+        secret-key: YCM21m2M6jYAKKvxjOJlnb2EbPS6r9yKlROHfd0_
+      signing-region: ru-central1
+      endpoint: storage.yandexcloud.net
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
